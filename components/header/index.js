@@ -3,6 +3,9 @@ import styled from "styled-components";
 
 const Wrap = styled.div`
   padding: 50px;
+  background: url("/assets/images/cyan-diagonal-bg.svg");
+  background-size: 100% 100%;
+  color: white;
 `;
 
 const Header = () => (
