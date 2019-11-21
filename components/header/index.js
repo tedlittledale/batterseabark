@@ -8,11 +8,13 @@ const Wrap = styled.div`
   color: white;
 `;
 
-const Header = () => (
-  <Wrap>
-    <h1>Battersea Bark</h1>
-    <h3>Woof!</h3>
-  </Wrap>
-);
+const Header = () => {
+  return (
+    <Wrap>
+      <h1>Battersea Bark</h1>
+      <h3>Woof!</h3>
+    </Wrap>
+  );
+};
 
 export default Header;

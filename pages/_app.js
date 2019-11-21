@@ -84,6 +84,23 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export default class MyApp extends App {
+  static async getInitialProps({ Component, ctx, ...rest }) {
+    console.log({ ctxreq: ctx.req });
+    let pageProps = {};
+    if (Component.getInitialProps) {
+      pageProps = await Component.getInitialProps(ctx);
+    }
+    // if (ctx.req && ctx.req.session.passport) {
+    //   pageProps.user = ctx.req.session.passport.user;
+    // }
+    return { pageProps };
+  }
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: props.pageProps.user
+    };
+  }
   render() {
     const { Component, pageProps } = this.props;
     return (
